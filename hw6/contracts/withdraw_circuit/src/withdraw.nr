@@ -14,7 +14,5 @@ fn main(
 
     // Make sure the root is valid for the path
     let computed_old_root = compute_merkle_root(new_leaf, index, hashpath);
-    println(computed_old_root);
-    println(root);
     assert(computed_old_root == root);
 }   

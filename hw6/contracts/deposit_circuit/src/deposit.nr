@@ -5,7 +5,7 @@ global N: u32 = 8;
 fn main(
     oldRoot: pub Field,
     newRoot: pub Field,
-    commitment: Field,
+    commitment: pub Field,
     index: pub Field,
     id:  Field,
     r: Field,
@@ -17,5 +17,7 @@ fn main(
     let computed_new_root: Field = compute_merkle_root(commitment, index, oldPath);
     assert(computed_new_root == newRoot);
 
+    let computed_old_root = compute_merkle_root(0x2df8b940e5890e4e1377e05373fae69a1d754f6935e6a780b666947431f2cdcd, index, oldPath);
+    assert(computed_old_root == oldRoot);
     }
 
